@@ -1,5 +1,5 @@
 'use strict';
-const { MemoryRateLimiter } = require('../../src');
+const { MemoryRateLimiter } = require('../..');
 
 describe('unit test memory rate limiter', () => {
   const redis = require('redis-mock'),

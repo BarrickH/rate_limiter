@@ -11,5 +11,4 @@ jobs:
           node-version: '14.x'
       - run: yarn install
       - run: yarn lint
-      - run: redis-server
       - run: yarn test

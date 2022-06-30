@@ -1,6 +1,6 @@
 'use strict';
 const { createClient } = require('redis');
-const { MemoryRateLimiter } = require('..');
+const { MemoryRateLimiter } = require('../..');
 
 const client = createClient();
 const rateLimit = new MemoryRateLimiter(client);

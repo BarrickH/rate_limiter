@@ -23,5 +23,10 @@
   },
   "engines": {
     "node": ">=14.17"
+  },
+  "jest": {
+    "testPathIgnorePatterns" : [
+      "/src/__tests__/e2eTest/e2e.test.js" 
+    ]
   }
 }
