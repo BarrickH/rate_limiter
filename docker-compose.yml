@@ -12,7 +12,7 @@ services:
       - |
         echo "
         To execute a script, run:
-        docker-compose run script {command}"
+        docker-compose run script redis-server"
 
 volumes:
   node-modules:
