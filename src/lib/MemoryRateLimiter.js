@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 class MemoryRateLimiter {
   constructor(redisClient) {
     this.client = redisClient;
@@ -6,12 +6,12 @@ class MemoryRateLimiter {
   }
   async consumer(uniqueId, limitedCalls = 10, windowPeriod = 1) {
     this.limitedCalls = limitedCalls;
-    const throttle = new Promise(async (resolve, reject) => {
-      const calls = await this.client.incr(uniqueId);
-      if (calls == 1) {
-        await this.client.expire(uniqueId, windowPeriod);
-      }
-      const pttl = await this.client.pTTL(uniqueId);
+    const calls = await this.client.incr(uniqueId);
+    if (calls == 1) {
+      await this.client.expire(uniqueId, windowPeriod);
+    }
+    const pttl = await this.client.pTTL(uniqueId);
+    const throttle = new Promise((resolve, reject) => {
       if (calls <= 10) {
         resolve(this.getRequestHeader(calls, pttl));
       } else {
