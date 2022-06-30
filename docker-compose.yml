@@ -9,10 +9,6 @@ services:
     command:
       - bash
       - -c
-      - |
-        echo "
-        To execute a script, run:
-        docker-compose run script {command}"
 
 volumes:
   node-modules:

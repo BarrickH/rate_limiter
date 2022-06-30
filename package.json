@@ -12,6 +12,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "redis": "^4.1.0",
+    "redis-mock": "^0.56.3"
   },
   "devDependencies": {
     "eslint": "^7.20.0",
@@ -21,5 +23,10 @@
   },
   "engines": {
     "node": ">=14.17"
+  },
+  "jest": {
+    "testPathIgnorePatterns" : [
+      "/src/__tests__/e2eTest/e2e.test.js" 
+    ]
   }
 }
