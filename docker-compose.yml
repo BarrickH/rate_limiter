@@ -9,10 +9,7 @@ services:
     command:
       - bash
       - -c
-      - |
-        echo "
-        To execute a script, run:
-        docker-compose run script redis-server"
+      - docker-compose run script redis-server
 
 volumes:
   node-modules:
