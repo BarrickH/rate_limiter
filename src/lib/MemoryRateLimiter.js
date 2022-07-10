@@ -12,7 +12,7 @@ class MemoryRateLimiter {
     }
     const pttl = await this.client.pTTL(uniqueId);
     const throttle = new Promise((resolve, reject) => {
-      if (calls <= 10) {
+      if (calls <= limitedCalls) {
         resolve(this.getRequestHeader(calls, pttl));
       } else {
         reject(this.getRequestHeader(calls, pttl));
